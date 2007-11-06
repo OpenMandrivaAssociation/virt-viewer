@@ -1,12 +1,12 @@
 %define	name	virt-viewer
 %define	version	0.0.2
-%define	release	%mkrel 1
+%define	release	%mkrel 2
 
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
 Summary:    Virtual Machine Viewer
-License:    GPL
+License:    GPLv2+
 Group:      Graphical desktop/GNOME
 URL:        http://virt-manager.org/
 Source:     http://virt-manager.org/download/sources/%{name}/%{name}-%{version}.tar.gz
