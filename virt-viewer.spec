@@ -12,6 +12,7 @@ URL:        http://virt-manager.org/
 Source:     http://virt-manager.org/download/sources/%{name}/%{name}-%{version}.tar.gz
 BuildRequires:  libvirt-devel
 BuildRequires:	libgtk-vnc-devel
+BuildRoot:      %{_tmppath}/%{name}-%{version}
 
 %description
 The "Virtual Machine Manager" (virt-manager for short package name) is a
