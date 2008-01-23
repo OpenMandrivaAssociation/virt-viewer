@@ -12,6 +12,7 @@ URL:        http://virt-manager.org/
 Source:     http://virt-manager.org/download/sources/%{name}/%{name}-%{version}.tar.gz
 BuildRequires:  libvirt-devel
 BuildRequires:	libgtk-vnc-devel
+BuildRequires:	xen-devel
 BuildRoot:      %{_tmppath}/%{name}-%{version}
 
 %description
