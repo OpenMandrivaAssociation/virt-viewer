@@ -1,6 +1,6 @@
 %define	name	virt-viewer
-%define	version	0.0.3
-%define	release	%mkrel 2
+%define	version	0.2.0
+%define	release	%mkrel 1
 
 Name:		%{name}
 Version:	%{version}
@@ -13,6 +13,7 @@ Source:     http://virt-manager.org/download/sources/%{name}/%{name}-%{version}.
 BuildRequires:  libvirt-devel
 BuildRequires:	libgtk-vnc-devel
 BuildRequires:	xen-devel
+BuildRequires:	libglade2-devel
 BuildRoot:      %{_tmppath}/%{name}-%{version}
 
 %description
@@ -44,4 +45,6 @@ rm -rf %{buildroot}
 %doc AUTHORS COPYING ChangeLog INSTALL NEWS README
 %{_bindir}/*
 %{_mandir}/man1/*
-
+%{_datadir}/%{name}/ui/about.glade
+%{_datadir}/%{name}/ui/auth.glade
+%{_datadir}/%{name}/ui/viewer.glade
