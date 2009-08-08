@@ -1,6 +1,6 @@
 %define	name	virt-viewer
 %define	version	0.2.0
-%define	release	%mkrel 1
+%define	release	%mkrel 2
 
 Name:		%{name}
 Version:	%{version}
@@ -17,14 +17,12 @@ BuildRequires:	libglade2-devel
 BuildRoot:      %{_tmppath}/%{name}-%{version}
 
 %description
-The "Virtual Machine Manager" (virt-manager for short package name) is a
-desktop application for managing virtual machines. It presents a summary view
-of running domains and their live performance & resource utilization
-statistics. A detailed view presents graphs showing performance & utilization
-over time. Ultimately it will allow creation of new domains, and configuration
-& adjustment of a domain's resource allocation & virtual hardware. Finally an
-embedded VNC client viewer presents a full graphical console to the guest
-domain.
+Virtual Machine Viewer (virt-viewer) is a lightweight interface for
+interacting with the graphical display of a virtualized guest OS. It uses
+GTK-VNC and libvirt to look up the VNC server details associated with the
+guest. It is intended as a replacement for the traditional vncviewer
+client, since the latter does not support SSL/TLS encryption of x509
+certificate authentication.
 
 %prep
 %setup -q
