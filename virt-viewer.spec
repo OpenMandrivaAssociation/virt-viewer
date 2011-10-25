@@ -1,5 +1,5 @@
 %define	name	virt-viewer
-%define	version	0.2.0
+%define	version	0.4.1
 %define	release	%mkrel 2
 
 Name:		%{name}
