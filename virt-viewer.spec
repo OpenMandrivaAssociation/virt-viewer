@@ -13,6 +13,7 @@ Source:     http://virt-manager.org/download/sources/%{name}/%{name}-%{version}.
 BuildRequires:  libvirt-devel
 BuildRequires:	gtk-vnc-devel
 BuildRequires:	xen-devel
+BuildRequires:	intltool
 BuildRequires:	pkgconfig(libglade-2.0)
 
 %description
