@@ -1,6 +1,6 @@
 %define	name	virt-viewer
-%define	version	0.4.1
-%define	release	%mkrel 1
+%define	version	0.5.3
+%define	release	1
 
 Name:		%{name}
 Version:	%{version}
@@ -11,10 +11,9 @@ Group:      Graphical desktop/GNOME
 URL:        http://virt-manager.org/
 Source:     http://virt-manager.org/download/sources/%{name}/%{name}-%{version}.tar.gz
 BuildRequires:  libvirt-devel
-BuildRequires:	libgtk-vnc-devel
+BuildRequires:	gtk-vnc-devel
 BuildRequires:	xen-devel
-BuildRequires:	libglade2-devel
-BuildRoot:      %{_tmppath}/%{name}-%{version}
+BuildRequires:	pkgconfig(libglade-2.0)
 
 %description
 Virtual Machine Viewer (virt-viewer) is a lightweight interface for
@@ -32,17 +31,17 @@ certificate authentication.
 %make
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
+%find_lang %{name}
 
 %clean
-rm -rf %{buildroot}
 
-%files
+
+%files -f %{name}.lang
 %defattr(-,root,root)
 %doc AUTHORS COPYING ChangeLog INSTALL NEWS README
 %{_bindir}/*
 %{_mandir}/man1/*
-%{_datadir}/%{name}/ui/about.glade
-%{_datadir}/%{name}/ui/auth.glade
-%{_datadir}/%{name}/ui/viewer.glade
+%{_datadir}/applications/remote-viewer.desktop
+%{_datadir}/icons/hicolor/*/*
+%{_datadir}/%{name}/ui
