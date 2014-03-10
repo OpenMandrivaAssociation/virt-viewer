@@ -23,6 +23,7 @@ BuildRequires: pkgconfig(spice-protocol) >= 0.10.1
 BuildRequires:	xen-devel
 BuildRequires:	intltool
 BuildRequires:	desktop-file-utils
+BuildRequires:  pkgconfig(shared-mime-info)
 
 %description
 Virtual Machine Viewer (virt-viewer) is a lightweight interface for
