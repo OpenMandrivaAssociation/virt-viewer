@@ -1,2 +1,4 @@
+removed_sources:
+  virt-viewer-0.5.4.tar.gz: 1327db7890fe5208c97b8a1778427d4834c7783d
 sources:
-  "virt-viewer-0.5.4.tar.gz": 1327db7890fe5208c97b8a1778427d4834c7783d
+  virt-viewer-0.6.0.tar.gz: 91871971f1aea391843ca901ef28c1f721178b4e
