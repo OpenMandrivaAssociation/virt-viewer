@@ -1,5 +1,5 @@
 %define	name	virt-viewer
-%define	version	0.6.0
+%define	version	1.0
 %define	release	1
 
 Name:		%{name}
@@ -37,7 +37,7 @@ certificate authentication.
 %setup -q
 
 %build
-%configure2_5x
+%configure2_5x --with-gtk=3.0 --disable-update-mimedb
 %make
 
 %install
@@ -48,6 +48,7 @@ certificate authentication.
 %doc AUTHORS COPYING ChangeLog INSTALL NEWS README
 %{_bindir}/*
 %{_mandir}/man1/*
+%{_datadir}/mime/packages/virt-viewer-mime.xml
 %{_datadir}/applications/remote-viewer.desktop
 %{_datadir}/icons/hicolor/*/*
 %{_datadir}/%{name}/ui
