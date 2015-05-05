@@ -1,10 +1,6 @@
-%define	name	virt-viewer
-%define	version	1.0
-%define release	2
-
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:		virt-viewer
+Version:	2.0
+Release:	1
 Summary:	Virtual Machine Viewer
 License:	GPLv2+
 Group:		Graphical desktop/GNOME
@@ -37,7 +33,7 @@ certificate authentication.
 %setup -q
 
 %build
-%configure2_5x --with-gtk=3.0 --disable-update-mimedb
+%configure --with-gtk=3.0 --disable-update-mimedb
 %make
 
 %install
