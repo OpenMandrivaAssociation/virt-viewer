@@ -1,10 +1,6 @@
-%define	name	virt-viewer
-%define	version	0.6.0
-%define	release	1
-
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:		virt-viewer
+Version:	2.0
+Release:	0.1
 Summary:	Virtual Machine Viewer
 License:	GPLv2+
 Group:		Graphical desktop/GNOME
@@ -20,7 +16,6 @@ BuildRequires: pkgconfig(libxml-2.0) >= 2.6.0
 BuildRequires: pkgconfig(spice-client-gtk-3.0) >= 0.12.101
 BuildRequires: pkgconfig(spice-controller)
 BuildRequires: pkgconfig(spice-protocol) >= 0.10.1
-BuildRequires:	xen-devel
 BuildRequires:	intltool
 BuildRequires:	desktop-file-utils
 BuildRequires:  pkgconfig(shared-mime-info)
@@ -37,7 +32,7 @@ certificate authentication.
 %setup -q
 
 %build
-%configure2_5x
+%configure --with-gtk=3.0 --disable-update-mimedb
 %make
 
 %install
@@ -48,6 +43,7 @@ certificate authentication.
 %doc AUTHORS COPYING ChangeLog INSTALL NEWS README
 %{_bindir}/*
 %{_mandir}/man1/*
+%{_datadir}/mime/packages/virt-viewer-mime.xml
 %{_datadir}/applications/remote-viewer.desktop
 %{_datadir}/icons/hicolor/*/*
 %{_datadir}/%{name}/ui
