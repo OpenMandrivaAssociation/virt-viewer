@@ -1,5 +1,5 @@
 Name:		virt-viewer
-Version:	2.0
+Version:	4.0
 Release:	1
 Summary:	Virtual Machine Viewer
 License:	GPLv2+
@@ -12,6 +12,7 @@ BuildRequires: pkgconfig(gthread-2.0)
 BuildRequires: pkgconfig(gtk+-3.0) >= 3.0
 BuildRequires: pkgconfig(gtk-vnc-2.0) >= 0.4.0
 BuildRequires: pkgconfig(libvirt)
+BuildRequires: pkgconfig(libvirt-glib-1.0)
 BuildRequires: pkgconfig(libxml-2.0) >= 2.6.0
 BuildRequires: pkgconfig(spice-client-gtk-3.0) >= 0.12.101
 BuildRequires: pkgconfig(spice-controller)
@@ -45,5 +46,5 @@ certificate authentication.
 %{_mandir}/man1/*
 %{_datadir}/mime/packages/virt-viewer-mime.xml
 %{_datadir}/applications/remote-viewer.desktop
+%{_datadir}/appdata/remote-viewer.appdata.xml
 %{_datadir}/icons/hicolor/*/*
-%{_datadir}/%{name}/ui
