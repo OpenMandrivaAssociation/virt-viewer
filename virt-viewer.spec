@@ -1,5 +1,7 @@
+%define _disable_rebuild_configure 1
+
 Name:		virt-viewer
-Version:	4.0
+Version:	7.0
 Release:	1
 Summary:	Virtual Machine Viewer
 License:	GPLv2+
@@ -15,7 +17,6 @@ BuildRequires: pkgconfig(libvirt)
 BuildRequires: pkgconfig(libvirt-glib-1.0)
 BuildRequires: pkgconfig(libxml-2.0) >= 2.6.0
 BuildRequires: pkgconfig(spice-client-gtk-3.0) >= 0.12.101
-BuildRequires: pkgconfig(spice-controller)
 BuildRequires: pkgconfig(spice-protocol) >= 0.10.1
 BuildRequires:	intltool
 BuildRequires:	desktop-file-utils
@@ -41,7 +42,7 @@ certificate authentication.
 %find_lang %{name}
 
 %files -f %{name}.lang
-%doc AUTHORS COPYING ChangeLog INSTALL NEWS README
+%doc AUTHORS COPYING ChangeLog NEWS README.md
 %{_bindir}/*
 %{_mandir}/man1/*
 %{_datadir}/mime/packages/virt-viewer-mime.xml
