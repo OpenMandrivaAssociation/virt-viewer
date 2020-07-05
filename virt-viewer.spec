@@ -1,7 +1,7 @@
 %define _disable_rebuild_configure 1
 
 Name:		virt-viewer
-Version:	8.0
+Version:	9.0
 Release:	1
 Summary:	Virtual Machine Viewer
 License:	GPLv2+
