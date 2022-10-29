@@ -1,0 +1,25 @@
+From 33a571a36985963ee05cc3b34d52a5d66571548a Mon Sep 17 00:00:00 2001
+From: "Eduardo Lima (Etrunko)" <etrunko@redhat.com>
+Date: Thu, 25 Aug 2022 15:10:30 -0300
+Subject: [PATCH 1/3] ovirt: Remove unused declaration
+ ovirt_foreign_menu_get_gtk_menu
+
+Signed-off-by: Eduardo Lima (Etrunko) <etrunko@redhat.com>
+---
+ src/ovirt-foreign-menu.h | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/src/ovirt-foreign-menu.h b/src/ovirt-foreign-menu.h
+index 0be028a..32e59e9 100644
+--- a/src/ovirt-foreign-menu.h
++++ b/src/ovirt-foreign-menu.h
+@@ -62,7 +62,6 @@ gboolean ovirt_foreign_menu_set_current_iso_name_finish(OvirtForeignMenu *foreig
+                                                         GError **error);
+ 
+ 
+-GtkWidget *ovirt_foreign_menu_get_gtk_menu(OvirtForeignMenu *foreign_menu);
+ gchar *ovirt_foreign_menu_get_current_iso_name(OvirtForeignMenu *menu);
+ GList *ovirt_foreign_menu_get_iso_names(OvirtForeignMenu *menu);
+ GStrv  ovirt_foreign_menu_get_current_iso_info(OvirtForeignMenu *menu);
+-- 
+2.37.3
