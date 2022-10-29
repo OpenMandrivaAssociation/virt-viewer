@@ -19,6 +19,7 @@ BuildRequires: pkgconfig(libvirt-glib-1.0)
 BuildRequires: pkgconfig(libxml-2.0) >= 2.6.0
 BuildRequires: pkgconfig(spice-client-gtk-3.0) >= 0.12.101
 BuildRequires: pkgconfig(spice-protocol) >= 0.10.1
+BuildRequires: pkgconfig(rest-0.7)
 BuildRequires: pkgconfig(vte-2.91)
 BuildRequires: bash-completion
 BuildRequires: meson
