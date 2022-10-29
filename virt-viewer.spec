@@ -8,6 +8,7 @@ License:	GPLv2+
 Group:		Graphical desktop/GNOME
 URL:		http://virt-manager.org/
 Source0:	http://virt-manager.org/download/sources/%{name}/%{name}-%{version}.tar.gz
+BuildRequires: pkgconfig(bash-completion)
 BuildRequires: pkgconfig(glib-2.0) >= 2.22.0
 BuildRequires: pkgconfig(gmodule-export-2.0)
 BuildRequires: pkgconfig(gthread-2.0)
