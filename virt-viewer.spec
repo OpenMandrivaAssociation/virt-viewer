@@ -8,6 +8,11 @@ License:	GPLv2+
 Group:		Graphical desktop/GNOME
 URL:		http://virt-manager.org/
 Source0:	http://virt-manager.org/download/sources/%{name}/%{name}-%{version}.tar.gz
+Patch1:		0001-ovirt-Remove-unused-declaration-ovirt_foreign_menu_g.patch
+Patch2:		0002-remote-viewer-Update-govirt-requirement.patch
+Patch3:		0003-remote-viewer-Simplify-oVirt-username-setting.patch
+Patch4:   0001-data-remove-bogus-param-for-meson-i18n.merge_file.patch
+
 BuildRequires: pkgconfig(bash-completion)
 BuildRequires: pkgconfig(glib-2.0) >= 2.22.0
 BuildRequires: pkgconfig(gmodule-export-2.0)
@@ -20,7 +25,7 @@ BuildRequires: pkgconfig(libvirt-glib-1.0)
 BuildRequires: pkgconfig(libxml-2.0) >= 2.6.0
 BuildRequires: pkgconfig(spice-client-gtk-3.0) >= 0.12.101
 BuildRequires: pkgconfig(spice-protocol) >= 0.10.1
-BuildRequires: pkgconfig(rest-0.7)
+BuildRequires: pkgconfig(rest-1.0)
 BuildRequires: pkgconfig(vte-2.91)
 BuildRequires: bash-completion
 BuildRequires: meson
@@ -36,7 +41,7 @@ client, since the latter does not support SSL/TLS encryption of x509
 certificate authentication.
 
 %prep
-%setup -q
+%autosetup -p1
 
 %build
 %meson
