@@ -52,10 +52,9 @@ certificate authentication.
 %find_lang %{name}
 
 %files -f %{name}.lang
-%doc AUTHORS COPYING ChangeLog NEWS README.md
+%doc AUTHORS COPYING NEWS README.md
 %{_bindir}/*
 %{_mandir}/man1/*
 %{_datadir}/mime/packages/virt-viewer-mime.xml
 %{_datadir}/applications/remote-viewer.desktop
-%{_datadir}/appdata/remote-viewer.appdata.xml
 %{_datadir}/icons/hicolor/*/*
