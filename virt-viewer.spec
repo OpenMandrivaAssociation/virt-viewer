@@ -58,3 +58,5 @@ certificate authentication.
 %{_datadir}/mime/packages/virt-viewer-mime.xml
 %{_datadir}/applications/remote-viewer.desktop
 %{_datadir}/icons/hicolor/*/*
+%{_datadir}/bash-completion/completions/virt-viewer
+%{_datadir}/metainfo/remote-viewer.appdata.xml
