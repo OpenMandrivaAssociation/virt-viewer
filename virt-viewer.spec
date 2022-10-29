@@ -11,6 +11,7 @@ Source0:	http://virt-manager.org/download/sources/%{name}/%{name}-%{version}.tar
 BuildRequires: pkgconfig(glib-2.0) >= 2.22.0
 BuildRequires: pkgconfig(gmodule-export-2.0)
 BuildRequires: pkgconfig(gthread-2.0)
+BuildRequires: pkgconfig(govirt-1.0)
 BuildRequires: pkgconfig(gtk+-3.0) >= 3.0
 BuildRequires: pkgconfig(gtk-vnc-2.0) >= 0.4.0
 BuildRequires: pkgconfig(libvirt)
@@ -18,6 +19,8 @@ BuildRequires: pkgconfig(libvirt-glib-1.0)
 BuildRequires: pkgconfig(libxml-2.0) >= 2.6.0
 BuildRequires: pkgconfig(spice-client-gtk-3.0) >= 0.12.101
 BuildRequires: pkgconfig(spice-protocol) >= 0.10.1
+BuildRequires: pkgconfig(vte-2.91)
+BuildRequires: bash-completion
 BuildRequires: meson
 BuildRequires: desktop-file-utils
 BuildRequires: pkgconfig(shared-mime-info)
