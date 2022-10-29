@@ -18,9 +18,9 @@ BuildRequires: pkgconfig(libvirt-glib-1.0)
 BuildRequires: pkgconfig(libxml-2.0) >= 2.6.0
 BuildRequires: pkgconfig(spice-client-gtk-3.0) >= 0.12.101
 BuildRequires: pkgconfig(spice-protocol) >= 0.10.1
-BuildRequires:	intltool
-BuildRequires:	desktop-file-utils
-BuildRequires:  pkgconfig(shared-mime-info)
+BuildRequires: meson
+BuildRequires: desktop-file-utils
+BuildRequires: pkgconfig(shared-mime-info)
 
 %description
 Virtual Machine Viewer (virt-viewer) is a lightweight interface for
@@ -34,11 +34,11 @@ certificate authentication.
 %setup -q
 
 %build
-%configure --with-gtk=3.0 --disable-update-mimedb
-%make
+%meson
+%meson_build
 
 %install
-%makeinstall_std
+%meson_install
 %find_lang %{name}
 
 %files -f %{name}.lang
