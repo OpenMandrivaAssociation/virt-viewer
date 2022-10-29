@@ -1,0 +1,68 @@
+From 83c1fbb5fdbd7f2d46a32e096441eb0b13cc3b00 Mon Sep 17 00:00:00 2001
+From: "Eduardo Lima (Etrunko)" <etrunko@redhat.com>
+Date: Tue, 30 Aug 2022 16:58:10 -0300
+Subject: [PATCH 3/3] remote-viewer: Simplify oVirt username setting
+
+Now that we don't have the authentication callback, we can make this
+logic simpler, by having only one place for setting the proxy object
+properties.
+
+Signed-off-by: Eduardo Lima (Etrunko) <etrunko@redhat.com>
+---
+ src/remote-viewer.c | 16 ++++++----------
+ 1 file changed, 6 insertions(+), 10 deletions(-)
+
+diff --git a/src/remote-viewer.c b/src/remote-viewer.c
+index 303193f..72664eb 100644
+--- a/src/remote-viewer.c
++++ b/src/remote-viewer.c
+@@ -305,6 +305,7 @@ parse_ovirt_uri(const gchar *uri_str, char **rest_uri, char **name, char **usern
+     g_strfreev(path_elements);
+     xmlFreeURI(uri);
+ 
++    g_debug("oVirt username: %s", *username);
+     g_debug("oVirt base URI: %s", *rest_uri);
+     g_debug("oVirt VM name: %s", *name);
+ 
+@@ -312,7 +313,7 @@ parse_ovirt_uri(const gchar *uri_str, char **rest_uri, char **name, char **usern
+ }
+ 
+ static void
+-remote_viewer_authenticate(VirtViewerApp *app, OvirtProxy *proxy)
++remote_viewer_authenticate(VirtViewerApp *app, OvirtProxy *proxy, gchar *user)
+ {
+     gchar *username = NULL;
+     gchar *password = NULL;
+@@ -321,14 +322,12 @@ remote_viewer_authenticate(VirtViewerApp *app, OvirtProxy *proxy)
+     gboolean kiosk = FALSE;
+     VirtViewerAuth *auth;
+ 
+-    g_object_get(proxy,
+-                 "username", &username,
+-                 NULL);
+-
+     g_object_get(app, "kiosk", &kiosk, NULL);
+ 
+-    if (username == NULL || *username == '\0')
++    if (user == NULL || *user == '\0')
+         username = g_strdup(g_get_user_name());
++    else
++        username = g_strdup(user);
+ 
+     window = virt_viewer_app_get_main_window(app);
+     auth = virt_viewer_auth_new(virt_viewer_window_get_window(window));
+@@ -435,11 +434,8 @@ create_ovirt_session(VirtViewerApp *app, const char *uri, GError **err)
+     }
+ 
+     proxy = ovirt_proxy_new(rest_uri);
+-    g_object_set(proxy,
+-                 "username", username,
+-                 NULL);
++    remote_viewer_authenticate(app, proxy, username);
+     ovirt_set_proxy_options(proxy);
+-    remote_viewer_authenticate(app, proxy);
+ 
+     api = ovirt_proxy_fetch_api(proxy, &error);
+     if (error != NULL) {
+-- 
+2.37.3
