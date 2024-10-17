@@ -6,7 +6,7 @@ Release:	2
 Summary:	Virtual Machine Viewer
 License:	GPLv2+
 Group:		Graphical desktop/GNOME
-URL:		http://virt-manager.org/
+URL:		https://virt-manager.org/
 Source0:	http://virt-manager.org/download/sources/%{name}/%{name}-%{version}.tar.gz
 Patch1:		0001-ovirt-Remove-unused-declaration-ovirt_foreign_menu_g.patch
 Patch2:		0002-remote-viewer-Update-govirt-requirement.patch
