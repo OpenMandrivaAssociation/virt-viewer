@@ -45,7 +45,7 @@ certificate authentication.
 %autosetup -p1
 
 %build
-%meson
+%meson -Dwerror=false
 %meson_build
 
 %install
