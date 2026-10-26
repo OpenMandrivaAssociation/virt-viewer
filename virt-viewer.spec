@@ -1,4 +1,6 @@
 %define _disable_rebuild_configure 1
+# Upstream keeps -Werror. clang's strstr() is const-correct and that is an error.
+%global optflags %{optflags} -Wno-incompatible-pointer-types-discards-qualifiers
 
 Name:		virt-viewer
 Version:	11.0
