@@ -29,6 +29,7 @@ BuildRequires: pkgconfig(rest-1.0)
 BuildRequires: pkgconfig(vte-2.91)
 BuildRequires: bash-completion
 BuildRequires: meson
+BuildRequires: gettext
 BuildRequires: desktop-file-utils
 BuildRequires: pkgconfig(shared-mime-info)
 
